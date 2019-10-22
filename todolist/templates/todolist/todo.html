@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <!--main css-->
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+
+
+    <meta charset="UTF-8">
+    <title>Todo</title>
+</head>
+
+<body>
+<!--header section-->
+<section id="todoheader" class="bg-white text-center">
+    <h1 class="display-1 text-success">
+        <strong>todos</strong>
+    </h1>
+</section>
+<!--end of header section-->
+
+
+<section id="todo" class="height bg-white mt-5 text-left">
+
+    <div class="my-custom-container container gridbg">
+
+        <div class="row">
+
+            <div class="col ">
+
+                <form action="/addtodo/" method="post" class="py-2 text-left">{% csrf_token %}
+                <div class="input-group mb-3">
+                <input type="text" class="form-control" name="content" placeholder="Enter todo" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                <button class="btn btn-outline-secondary bg-secondary text-white font-weight-bold" type="submit">ADD</button>
+                </div>
+                </div>
+                    </form>
+            </div>
+        </div>
+
+    <div class="row ml-0">
+        <div class="col-lg-12">
+            <div class="btn-toolbar ">
+                <div class="btn-group ">
+                    <a href="{% url 'deletecompleted' %}">
+                        <button type="button" class="btn btn-warning ">
+                            DELETE COMPLETED
+                        </button>
+                    </a>
+
+                </div>
+                <div class="btn-group ml-3">
+                    <a href="{% url 'deleteall' %}">
+                        <button type="button" class="btn btn-warning">
+                            DELETE ALL
+                        </button>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+        <div class="row mt-3 ">
+            <div class="col text-left custom-control">
+
+            {% for all_item in all_items %}
+                <ul  class="list-group list-group-flush text-dark">
+                {% if all_item.complete %}
+                <li class="list-group-item todo-complete">
+                    {{ all_item.contents }}
+                </li>
+                    {% else %}
+                    <a href="{% url 'complete' all_item.id %}"><li class="list-group-item text-dark">{{ all_item.contents }}
+                </li></a>
+                    {% endif %}
+                </ul>
+            {% endfor %}
+
+
+           </div>
+        </div>
+    <footer>
+            <div class="text-center">
+                {% if all_items.count > 1%}
+                {{ all_items.count }} items
+                {% elif all_items.count == 1 %}
+                    {{ all_items.count }} item
+                    {% else %}
+
+                {% endif %}
+            </div>
+    </footer>
+
+
+
+    </div>
+<div class="row all-help text-center mt-2" style="display: block" >
+    Click on the todo to toggle item status
+    <div class="row pad">
+        <div class="text-center col-lg-12">
+            Copyright &copy; 2019
+            <strong>ToDo App</strong>
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+</body>
+
+</html>

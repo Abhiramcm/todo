@@ -1,0 +1,22 @@
+        .height{min-height: 100vh}
+        body{
+    font-family: 'Montserrat', sans-serif;
+
+        }
+            @media (min-width: 500px){
+    .my-custom-container{
+        width:500px;}
+                .gridbg{
+                    background: antiquewhite;
+                }
+                .all-help{
+                    color: black;
+                    font-size: 10px;
+                }
+}
+
+.todo-complete{
+    text-decoration: line-through;
+    background: #6c757d;
+
+}
