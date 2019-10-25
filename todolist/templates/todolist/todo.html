@@ -15,10 +15,22 @@
 
 <body>
 <!--header section-->
-<section id="todoheader" class="bg-white text-center">
-    <h1 class="display-1 text-success">
+<section id="todoheader" class="bg-white ">
+    <div class="text-right mr-5">
+        {% if user.is_authenticated  %}
+            <p>you are logged in as {{ user.username }}.
+            <a href="{% url 'logout' %}">Logout</a>
+            </p>
+        {% else %}
+        <a href="{% url 'login' %}">Login
+        </a>
+        {% endif %}
+
+    </div>
+    <h1 class="display-1 text-success text-center">
         <strong>todos</strong>
     </h1>
+
 </section>
 <!--end of header section-->
 

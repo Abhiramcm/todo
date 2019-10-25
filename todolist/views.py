@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from .models import TodoItem
@@ -15,16 +15,23 @@ def user_login(request):
     username = request.POST.get('username')
     password = request.POST.get('password')
     user = authenticate(request,username=username,password=password)
-    if user and username=='admin':
+    if user:
         login(request, user)
         if request.GET.get('next', None):
             return HttpResponseRedirect(request.GET['next'])
+
             #return redirect('login')
         else:
-            context['error']="provide proper credentials!!"
-            return render(request,'login.html',context)
+
+            return redirect('index')
     else:
+        context['error']="provide proper credentials!!"
         return render(request, 'todolist/login.html', context)
+
+def user_logout(request):
+    #if request.method == "POST":
+        logout(request)
+        return redirect('index')
 
 @login_required(login_url='/user_login')
 def addtodo(request):
