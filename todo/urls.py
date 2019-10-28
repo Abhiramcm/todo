@@ -26,5 +26,6 @@ urlpatterns = [
     path('completeitem/<int:item_id>/',complete,name='complete'),
     path('deletecompleted/',deletecompleted,name='deletecompleted'),
     path('deleteall/',deleteall,name='deleteall'),
+    #path('filterview/', filterview, name='filter'),
 
 ]

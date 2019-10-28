@@ -5,6 +5,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/todo/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todolist/migrations/0002_todoitem_complete.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todolist/migrations/0003_auto_20191023_2035.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/todolist/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/todolist/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todolist/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/todolist/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todolist/templates/todolist/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/todolist/templates/todolist/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todolist/templates/todolist/todo.html" beforeDir="false" afterPath="$PROJECT_DIR$/todolist/templates/todolist/todo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todolist/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/todolist/views.py" afterDir="false" />
     </list>
@@ -110,7 +115,10 @@
       <workItem from="1571724169979" duration="9290000" />
       <workItem from="1571810491840" duration="29831000" />
       <workItem from="1571901170085" duration="2289000" />
-      <workItem from="1571993894794" duration="4255000" />
+      <workItem from="1571993894794" duration="6673000" />
+      <workItem from="1572073948181" duration="23829000" />
+      <workItem from="1572166873574" duration="22418000" />
+      <workItem from="1572240010502" duration="18990000" />
     </task>
     <servers />
   </component>

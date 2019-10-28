@@ -37,8 +37,11 @@
                     </table>
 
                 </div>
+
                     <button class="btn btn-outline-secondary bg-secondary text-white font-weight-bold " type="submit">Login</button>
-                    </form>
+                    {{ context.error }}
+                    <p class="small">**Permission restricted to admin only</p>
+                </form>
             </div>
 
         </div>
